@@ -26,8 +26,8 @@ var Search = React.createClass({
         <p><input type="text" value={this.state.term} onChange={this.onUpdateTerm} /></p>
         {this.state.results.map(function(result) {
           return (
-            <div>
-              {result.name}
+            <div key={result.id}>
+              <img src={result.url} />
             </div>
           );
         })}

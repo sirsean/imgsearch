@@ -2,11 +2,7 @@ class SearchController < ApplicationController
   def index
     term = search_params[:term]
 
-    results = term.chars.map do |c|
-      {
-        name: "#{c.upcase}: #{term}",
-      }
-    end
+    results = Image.search(term).results.map(&:_source)
 
     render json: results
   end

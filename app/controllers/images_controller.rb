@@ -5,7 +5,10 @@ class ImagesController < ApplicationController
   end
 
   def create
-    image = Image.new(description: params[:description], tags: params[:tags].split(","))
+    image = Image.new(
+      description: params[:description],
+      tags: params[:tags].split(","),
+      ready: true)
     image.image = params[:file]
     image.save
 
