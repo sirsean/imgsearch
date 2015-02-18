@@ -10,8 +10,9 @@ var App = React.createClass({
     });
   },
   isSearching: function(props) {
+    // you're searching if you're on search OR the home page
     return props.routes.filter(function(r) {
-      return r == "search";
+      return (r == "search") || (r === undefined);
     }).length > 0;
   },
   render: function() {

@@ -19,7 +19,7 @@ var Search = React.createClass({
   },
   render: function() {
     return (
-      <div>
+      <div className="searchResults">
         {this.state.results.map(function(result) {
           return (
             <div key={result.id} className="result">

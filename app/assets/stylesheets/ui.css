@@ -3,12 +3,11 @@
 }
 
 header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   background-color: #EEEEEE;
-  height: 65px;
-}
-
-header div {
-  float: left;
+  padding: 5px;
 }
 
 header .button {
@@ -19,30 +18,28 @@ header .button {
 }
 
 header .searchButton {
-  position: absolute;
-  top: 10px;
-  left: 0;
 }
 
 header .addButton {
-  position: absolute;
-  top: 10px;
-  right: 0;
 }
 
 header .searchBox {
-  position: absolute;
-  top: 10px;
-  left: 100px;
+  flex-grow: 2;
 }
 
 .searchBox input {
   font-size: 24pt;
+  width: 100%;
+}
+
+.searchResults {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .result {
-  float: left;
-  margin: 2px;
 }
 
 .addImage {
