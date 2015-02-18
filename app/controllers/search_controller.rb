@@ -10,7 +10,6 @@ class SearchController < ApplicationController
         rest << t
       end
     end
-    rest = rest.join(" ")
 
     f = {
       bool: {
@@ -24,14 +23,14 @@ class SearchController < ApplicationController
           end
       }
     }
-    if rest == ""
+    if rest.empty?
       q = {
         match_all: {}
       }
     else
       q = {
         match: {
-          description: rest
+          description: rest.join(" ")
         }
       }
     end
@@ -42,9 +41,8 @@ class SearchController < ApplicationController
         query: q,
       }
     }
-    results = Image.search(query: query).results.map(&:_source)
 
-    render json: results
+    render json: Image.search(query: query).results.map(&:_source)
   end
 
   private
