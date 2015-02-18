@@ -8,6 +8,7 @@ var routes = (
     <Route name="search" handler={Search} />
     <Route name="img" path="img" handler={Image.Main}>
       <Route name="addImage" path="add" handler={Image.Add} />
+      <Route name="viewImage" path=":imageId" handler={Image.View} />
     </Route>
     <DefaultRoute handler={Dashboard} />
   </Route>
