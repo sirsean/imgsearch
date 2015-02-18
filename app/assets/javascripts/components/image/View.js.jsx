@@ -24,16 +24,20 @@ Image.View = React.createClass({
   render: function() {
     if (this.state.image) {
       return (
-        <div>
-          <img src={this.state.image.image.url} />
-          <p>{this.state.image.description}</p>
-          <ul>
-            {this.state.image.tags.map(function(tag, i) {
-              return (
-                <li key={i}>#{tag}</li>
-              );
-            })}
-          </ul>
+        <div className="viewImage">
+          <div className="imageInfo">
+            <span className="description">{this.state.image.description}</span>
+            <div className="tags">
+              {this.state.image.tags.map(function(tag, i) {
+                return (
+                  <span key={i} className="tag">#{tag}</span>
+                );
+              })}
+            </div>
+          </div>
+          <div className="image">
+            <img src={this.state.image.image.url} />
+          </div>
         </div>
       );
     } else {

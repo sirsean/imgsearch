@@ -10,10 +10,13 @@ var routes = (
       <Route name="addImage" path="add" handler={Image.Add} />
       <Route name="viewImage" path=":imageId" handler={Image.View} />
     </Route>
-    <DefaultRoute handler={Dashboard} />
+    <DefaultRoute handler={Search} />
   </Route>
 );
 
-ReactRouter.run(routes, function(Handler) {
-  React.render(<Handler />, document.body);
+ReactRouter.run(routes, function(Handler, state) {
+  var routeList = state.routes.map(function(r) {
+    return r.name;
+  });
+  React.render(<Handler routes={routeList} />, document.body);
 });

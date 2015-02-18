@@ -1,0 +1,106 @@
+.clear {
+  clear: both;
+}
+
+header {
+  background-color: #EEEEEE;
+  height: 65px;
+}
+
+header div {
+  float: left;
+}
+
+header .button {
+  width: 72px;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 12px;
+}
+
+header .searchButton {
+  position: absolute;
+  top: 10px;
+  left: 0;
+}
+
+header .addButton {
+  position: absolute;
+  top: 10px;
+  right: 0;
+}
+
+header .searchBox {
+  position: absolute;
+  top: 10px;
+  left: 100px;
+}
+
+.searchBox input {
+  font-size: 24pt;
+}
+
+.result {
+  float: left;
+  margin: 2px;
+}
+
+.addImage {
+  margin: 5px;
+  padding: 10px;
+}
+
+.addImage .imageInfo {
+  width: 25%;
+  float: left;
+}
+
+.addImage .imageInfo .title {
+  display: block;
+  margin-top: 10px;
+}
+
+.addImage .imageInfo textarea {
+  width: 90%;
+}
+
+.addImage .imageUpload {
+  float: left;
+  border: 2px dashed gray;
+  width: 65%;
+  text-align: center;
+  padding: 50px;
+}
+
+.addImage .submit {
+  clear: both;
+  text-align: center;
+}
+
+.viewImage {
+  margin: 5px;
+  padding: 10px;
+}
+
+.viewImage .imageInfo {
+  width: 25%;
+  float: left;
+}
+
+.viewImage .imageInfo .description {
+  display: block;
+  padding: 10px;
+}
+
+.viewImage .imageInfo .tags {
+  padding: 10px;
+}
+
+.viewImage .imageInfo .tags .tag {
+  display: inline-block;
+  margin: 5px;
+}
+
+.viewImage .image {
+  float: left;
+}

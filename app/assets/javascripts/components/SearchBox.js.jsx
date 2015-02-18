@@ -1,4 +1,4 @@
-var Search = React.createClass({
+var SearchBox = React.createClass({
   getInitialState: function() {
     return {
       term: SearchStore.state.term(),
@@ -7,7 +7,6 @@ var Search = React.createClass({
   },
   componentDidMount: function() {
     SearchStore.addChangeListener(this._onChange);
-    Actions.setSearchTerm(this.state.term);
   },
   componentWillUnmount: function() {
     SearchStore.removeChangeListener(this._onChange);
@@ -17,16 +16,13 @@ var Search = React.createClass({
       this.setState(this.getInitialState());
     }
   },
+  onUpdateTerm: function(e) {
+    Actions.setSearchTerm(e.target.value);
+  },
   render: function() {
     return (
-      <div>
-        {this.state.results.map(function(result) {
-          return (
-            <div key={result.id} className="result">
-              <img src={result.url} />
-            </div>
-          );
-        })}
+      <div className="searchBox">
+        <input type="text" value={this.state.term} onChange={this.onUpdateTerm} />
       </div>
     );
   }

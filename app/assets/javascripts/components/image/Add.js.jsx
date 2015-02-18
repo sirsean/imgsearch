@@ -37,12 +37,20 @@ Image.Add = React.createClass({
   },
   render: function() {
     return (
-      <div>
-        <p>add an image</p>
-        <p>upload file <input type="file" onChange={this.onUpdateFile} /></p>
-        <p>Description <textarea value={this.state.description} onChange={this.onUpdateDescription} /></p>
-        <p>Tags <textarea value={this.state.tags} onChange={this.onUpdateTags} /></p>
-        <p><button onClick={this.onSubmit}>Add</button></p>
+      <div className="addImage">
+        <h1>Add Image</h1>
+        <div className="imageInfo">
+          <span className="title">Description</span>
+          <textarea value={this.state.description} onChange={this.onUpdateDescription} rows="8" />
+          <span className="title">Tags</span>
+          <textarea value={this.state.tags} onChange={this.onUpdateTags} rows="6" />
+        </div>
+        <div className="imageUpload">
+          <input type="file" onChange={this.onUpdateFile} />
+        </div>
+        <div className="submit">
+          <button onClick={this.onSubmit}>Add</button>
+        </div>
       </div>
     );
   }
