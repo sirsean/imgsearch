@@ -22,11 +22,9 @@ var App = React.createClass({
           <div className="button searchButton">
             <Link to="search">Search</Link>
           </div>
-          {this.state.searching &&
-            <div className="searchBox">
-              <SearchBox />
-            </div>
-          }
+          <div className="searchBox">
+          {this.state.searching && <SearchBox />}
+          </div>
           <div className="button addButton">
             <Link to="addImage">Add</Link>
           </div>

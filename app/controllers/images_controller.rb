@@ -9,7 +9,11 @@ class ImagesController < ApplicationController
       description: params[:description],
       tags: params[:tags].split(",").map(&:downcase),
       ready: true)
-    image.image = params[:file]
+    if params[:file]
+      image.image = params[:file]
+    elsif params[:externalUrl]
+      image.remote_image_url = params[:externalUrl]
+    end
     image.save
 
     render json: image

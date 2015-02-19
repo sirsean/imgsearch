@@ -8,6 +8,7 @@ header {
   align-items: center;
   background-color: #EEEEEE;
   padding: 5px;
+  margin-bottom: 8px;
 }
 
 header .button {
@@ -45,11 +46,12 @@ header .searchBox {
 .addImage {
   margin: 5px;
   padding: 10px;
+  display: flex;
+  flex-flow: row wrap;
 }
 
 .addImage .imageInfo {
-  width: 25%;
-  float: left;
+  flex: 1 auto;
 }
 
 .addImage .imageInfo .title {
@@ -62,26 +64,36 @@ header .searchBox {
 }
 
 .addImage .imageUpload {
-  float: left;
+  flex: 3 auto;
   border: 2px dashed gray;
-  width: 65%;
   text-align: center;
   padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.addImage .imageUpload input {
+  width: 200px;
+  margin: 20px;
 }
 
 .addImage .submit {
-  clear: both;
+  flex: 1 100%;
   text-align: center;
+  padding: 20px;
 }
 
 .viewImage {
   margin: 5px;
   padding: 10px;
+  display: flex;
+  flex-direction: row;
 }
 
 .viewImage .imageInfo {
   width: 25%;
-  float: left;
 }
 
 .viewImage .imageInfo .description {
@@ -99,5 +111,4 @@ header .searchBox {
 }
 
 .viewImage .image {
-  float: left;
 }

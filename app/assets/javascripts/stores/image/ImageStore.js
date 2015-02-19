@@ -13,7 +13,12 @@ var ImageStore = function() {
         var data = new FormData();
         data.append("description", action.description);
         data.append("tags", action.tags);
-        data.append("file", action.files[0]);
+        if (action.files.length > 0) {
+          data.append("file", action.files[0]);
+        }
+        if (action.externalUrl != "") {
+          data.append("externalUrl", action.externalUrl);
+        }
 
         $.ajax({
           type: "POST",

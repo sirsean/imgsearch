@@ -11,10 +11,11 @@ var Actions = {
       results: results
     });
   },
-  addImage: function(files, description, tags) {
+  addImage: function(files, externalUrl, description, tags) {
     Dispatcher.dispatch({
       type: "ADD_IMAGE",
       files: files,
+      externalUrl: externalUrl,
       description: description,
       tags: tags
     });
