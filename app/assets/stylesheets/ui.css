@@ -37,11 +37,11 @@ header .searchBox {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
 }
 
-.result img {
-  width: 20vw;
+.searchResult img {
+  width: 24vw;
+  height: 24vw;
 }
 
 .addImage {

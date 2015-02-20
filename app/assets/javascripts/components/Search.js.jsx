@@ -22,8 +22,8 @@ var Search = React.createClass({
       <div className="searchResults">
         {this.state.results.map(function(result) {
           return (
-            <div key={result.id} className="result">
-              <img src={result.url} />
+            <div key={result.id}>
+              <SearchResult result={result} />
             </div>
           );
         })}
