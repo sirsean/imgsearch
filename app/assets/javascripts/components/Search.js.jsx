@@ -19,14 +19,21 @@ var Search = React.createClass({
   },
   render: function() {
     return (
-      <div className="searchResults">
-        {this.state.results.map(function(result) {
-          return (
-            <div key={result.id}>
-              <SearchResult result={result} />
-            </div>
-          );
-        })}
+      <div>
+        {(!this.state.results || this.state.results.length == 0) &&
+          <div className="noResults">
+            <img src="/assets/results-null.png" />
+          </div>
+        }
+        <div className="searchResults">
+          {this.state.results.map(function(result) {
+            return (
+              <div key={result.id}>
+                <SearchResult result={result} />
+              </div>
+            );
+          })}
+        </div>
       </div>
     );
   }

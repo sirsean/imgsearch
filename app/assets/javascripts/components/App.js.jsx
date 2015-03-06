@@ -19,16 +19,22 @@ var App = React.createClass({
     return (
       <div>
         <header>
-          <div className="button searchButton">
-            <Link to="search">Search</Link>
+          <div className="logo">
+            <img src="/assets/donut-imgsearch_logo.png" />
           </div>
-          <div className="searchBox">
-          {this.state.searching && <SearchBox />}
-          </div>
-          <div className="button addButton">
-            <Link to="addImage">Add</Link>
-          </div>
-          <div className="clear"></div>
+          {this.state.searching &&
+            <div className="searchBox">
+              <SearchBox />
+              <div className="button addButton">
+                <Link to="addImage">or add a new image</Link>
+              </div>
+            </div>
+          }
+          {!this.state.searching &&
+            <div className="button searchButton">
+              <Link to="search">go back to Search</Link>
+            </div>
+          }
         </header>
         <RouteHandler />
       </div>

@@ -21,7 +21,7 @@ var SearchBox = React.createClass({
   },
   render: function() {
     return (
-      <div className="searchBox">
+      <div>
         <input type="text" value={this.state.term} onChange={this.onUpdateTerm} />
       </div>
     );
